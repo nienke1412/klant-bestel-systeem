@@ -9,6 +9,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly ICustomerRepository _customerRepository;
+        
 
         public IList<Customer> Customers { get; set; }
 
@@ -24,5 +25,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
             Customers = _customerRepository.GetAllCustomers().ToList();                            
             _logger.LogInformation($"getting all {Customers.Count} customers");
         }
+
+        
     }
 }

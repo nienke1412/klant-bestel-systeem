@@ -1,0 +1,15 @@
+﻿@page
+@model KE03_INTDEV_SE_1_Base.Pages.ProductPaginaModel
+@{
+    ViewData["Title"] = "Producten";
+}
+
+<div class="card">
+@foreach (var i in Model.Products)
+{
+    <h1>@Html.DisplayName(i.Name)</h1>
+    <p class="price">@Html.DisplayName($"€{i.Price.ToString()}")</p>
+    <p>@Html.DisplayName(i.Description)</p>
+    <p><button>Add to cart</button></p>
+}
+</div> 
