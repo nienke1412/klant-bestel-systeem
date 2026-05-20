@@ -37,13 +37,26 @@ namespace DataAccessLayer.Repositories
 
         public Order? GetOrderById(int id)
         {
-            return _context.Orders.Include(o => o.Customer).FirstOrDefault(o => o.Id == id);
+            return _context.Orders.Include(o => o.Customer).Include(o => o.Products).FirstOrDefault(o => o.Id == id);
         }
 
         public void UpdateOrder(Order order)
         {
             _context.Orders.Update(order);
             _context.SaveChanges();
+        }
+
+        public void AddProductToOrder(int orderId, int productId)
+        {
+            var order = _context.Orders.Include(o => o.Products).FirstOrDefault(o => o.Id == orderId);
+            var product = _context.Products.Find(productId);
+            order.Products.Add(product);
+            _context.SaveChanges();
+        }
+
+        public Order GetOrderWithLines(int orderId)
+        {
+            return _context.Orders.Include(o => o.Products).FirstOrDefault(o => o.Id == orderId);
         }
     }
 }

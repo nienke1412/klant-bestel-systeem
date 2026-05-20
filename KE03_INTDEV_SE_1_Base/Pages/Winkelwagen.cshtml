@@ -4,4 +4,12 @@
 	ViewData["Title"] = "Winkelwagen";
 }
 
-<img src="~/images/grocery-store.png" alt="Shopping card" />
+<h2>order</h2>
+<ul>
+	@foreach (var product in Model.Order.Products)
+	{
+		<li>@Html.DisplayName(product.Name) - @Html.DisplayName($"€{product.Price.ToString()}")</li>
+	}
+</ul>
+
+<button>Bestellen</button>
