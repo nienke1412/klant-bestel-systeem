@@ -37,13 +37,22 @@ namespace DataAccessLayer.Repositories
 
         public Customer? GetCustomerById(int id)
         {
-            return _context.Customers.Include(c => c.Orders).FirstOrDefault(c => c.Id == id);
+            return _context.Customers.Include(c => c.Orders).ThenInclude(o => o.Products).FirstOrDefault(c => c.Id == id);
         }
 
         public void UpdateCustomer(Customer customer)
         {
             _context.Customers.Update(customer);
             _context.SaveChanges();
+        }
+
+        public void AddOrderToCustomer(int orderId, int CustomerId)
+        {
+            var order = _context.Orders.Include(o => o.Products).FirstOrDefault(o => o.Id == orderId);
+            var Customer = _context.Customers.Find(CustomerId);
+            Customer.Orders.Add(order);
+            _context.SaveChanges();
+
         }
     }
 }

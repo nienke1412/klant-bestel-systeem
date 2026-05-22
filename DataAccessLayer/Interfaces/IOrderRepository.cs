@@ -21,6 +21,6 @@ namespace DataAccessLayer.Interfaces
 
         public void AddProductToOrder(int orderId, int productId);
 
-        public Order GetOrderWithLines(int orderId);
+       
     }
 }

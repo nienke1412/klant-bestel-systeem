@@ -1,0 +1,15 @@
+﻿@page
+@model KE03_INTDEV_SE_1_Base.Pages.BestellenModel
+@{
+	ViewData["Title"] = "Bestellen";
+}
+
+<h2> Voer hier uw gegevens in:</h2>
+
+<form action="/action_page.php">
+	<label for="fname">First name:</label>
+	<input type="text" id="fname" name="fname"><br><br>
+	<label for="lname">Last name:</label>
+	<input type="text" id="lname" name="lname"><br><br>
+	<input type="submit" value="Submit">
+</form>

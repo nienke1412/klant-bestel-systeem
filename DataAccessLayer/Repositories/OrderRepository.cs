@@ -52,11 +52,23 @@ namespace DataAccessLayer.Repositories
             var product = _context.Products.Find(productId);
             order.Products.Add(product);
             _context.SaveChanges();
+
         }
 
-        public Order GetOrderWithLines(int orderId)
+        public void NewOrder(string CustomerName)
         {
-            return _context.Orders.Include(o => o.Products).FirstOrDefault(o => o.Id == orderId);
+            var customer = _context.Customers
+        .FirstOrDefault(c => c.Name == CustomerName);
+
+            if (customer == null)
+                throw new Exception("Customer not found");
+            var order = new Order
+            {
+                CustomerId = customer.Id,
+                OrderDate = DateTime.Now
+            };
         }
+
+
     }
 }
