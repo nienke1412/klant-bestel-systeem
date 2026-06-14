@@ -65,13 +65,18 @@ body {
     float: right;
 }
 
-.ProductCard{
+.ProductCard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    max-width: 400px;
-    margin: auto;
+    margin: 0;
     text-align: center;
     font-family: Arial;
     margin-bottom: 10px;
+    border: 2px solid #ccc;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
 }
 
 .price{
@@ -89,13 +94,22 @@ body {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+    margin-top: auto;
 }
 
 .ProductCard button:hover{
     opacity: 0.7;
 }
 
-.productCard{
+.productCard {
     margin: 20px;
-    outline: 2px;
+    
+}
+
+.producten {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
 }
