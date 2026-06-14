@@ -19,6 +19,6 @@ namespace DataAccessLayer.Interfaces
 
         public void DeleteCustomer(Customer customer);
 
-        public void AddOrderToCustomer(int orderId, int CustomerId);
+        public void AddOrderToCustomer(int orderId);
     }
 }

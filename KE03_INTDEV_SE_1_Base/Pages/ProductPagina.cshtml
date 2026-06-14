@@ -4,9 +4,10 @@
     ViewData["Title"] = "Producten";
 }
 
-<div class="card">
+
 @foreach (var i in Model.Products)
 {
+    <div class="ProductCard">
     <h1>@Html.DisplayName(i.Name)</h1>
     <p class="price">@Html.DisplayName($"€{i.Price.ToString()}")</p>
     <p>@Html.DisplayName(i.Description)</p>
@@ -14,6 +15,6 @@
             <input type="hidden" name="productId" value="@i.Id" />
             <button type="submit">Add to cart</button>
         </form>
-    <br />
+    </div>
 }
-</div> 
+ 

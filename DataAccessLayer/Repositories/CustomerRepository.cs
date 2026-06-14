@@ -46,8 +46,9 @@ namespace DataAccessLayer.Repositories
             _context.SaveChanges();
         }
 
-        public void AddOrderToCustomer(int orderId, int CustomerId)
+        public void AddOrderToCustomer(int orderId)
         {
+            int CustomerId = 1; // Example customer ID
             var order = _context.Orders.Include(o => o.Products).FirstOrDefault(o => o.Id == orderId);
             var Customer = _context.Customers.Find(CustomerId);
             Customer.Orders.Add(order);
