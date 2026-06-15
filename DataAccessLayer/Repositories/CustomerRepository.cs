@@ -48,7 +48,7 @@ namespace DataAccessLayer.Repositories
 
         public void AddOrderToCustomer(int orderId)
         {
-            int CustomerId = 1; // Example customer ID
+            int CustomerId = 1; // voorbeeld customer ID, moet dynamisch worden.
             var order = _context.Orders.Include(o => o.Products).FirstOrDefault(o => o.Id == orderId);
             var Customer = _context.Customers.Find(CustomerId);
             Customer.Orders.Add(order);
