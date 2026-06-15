@@ -31,7 +31,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public IActionResult OnPostAddToCart(int productId)
         {
-            int orderId = 1; // In a real application, you would get the order ID from the user's session or database
+            int orderId = 1; // moet nog dynamisch worden
             _orderRepository.AddProductToOrder(orderId, productId);
             return RedirectToPage();
         }

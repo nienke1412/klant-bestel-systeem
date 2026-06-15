@@ -13,18 +13,23 @@
 
 <br />
 <div>
-    <h3>Populaire producten:</h3>
+    <h3>Categorieën:</h3>
     <hr />
      
 </div>
 
-
-<div class="card">
-       <h1>Nebuchadnezzar</h1>
-    <p class="price">$10000</p>
-    <p>Het schip waarop Neo voor het eerst de echte wereld leert kennen</p>
-    <p><button onclick="addToCart('Nebuchadnezzar', 100000)">Add to cart</button></p>
+<div>
+    @foreach (var category in Model.Categories)
+    {
+        <div class="card">
+            <h5 class="card-title">@category.Name</h5>
+            <p class="card-text">Bekijk onze producten in deze categorie.</p>
+            <a href="/Products?categoryId=@category.Id" class="btn btn-primary">Bekijk producten</a>
+        </div>
+    }
 </div>
+
+
 
 
 <!--
