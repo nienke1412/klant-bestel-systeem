@@ -113,3 +113,13 @@ body {
     align-items: stretch;
     grid-auto-rows: 1fr;
 }
+
+.card{
+
+}
+
+.Categorieën {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
