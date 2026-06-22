@@ -19,14 +19,23 @@
 </div>
 
 <div class="Categorieën">
-    @foreach (var category in Model.Categories)
-    {
-        <div class="card">
-            <h5 class="card-title">@category.Name</h5>
-            <p class="card-text">Bekijk onze producten in deze categorie.</p>
-            <a href="/Products?categoryId=@category.Id" class="btn btn-primary">Bekijk producten</a>
-        </div>
-    }
+        <div class="card"> 
+        <img class="ImageC" src="~/images/Vliegtuig.jpg" alt="Voertuigen" />
+        <h5>Voertuigen</h5>
+        <a href="/Products?categoryId="0" class="btn btn-primary">Bekijk producten</a>
+    </div>
+
+    <div class="card">
+        <img class="ImageC"  src="~/images/werkMee.jpg" alt="Meubels" />
+        <h5>Meubels</h5>
+        <a href="/Products?categoryId="1" class="btn btn-primary">Bekijk producten</a>        
+    </div>
+
+    <div class="card">
+        <img class="ImageC"  src="~/images/Naamloos.jpg" alt="Wapentuig" />
+        <h5>Wapentuig</h5>
+        <a href="/Products?categoryId="2" class="btn btn-primary">Bekijk producten</a>
+    </div>
 </div>
 
 

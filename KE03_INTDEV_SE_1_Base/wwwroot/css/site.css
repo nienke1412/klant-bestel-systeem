@@ -123,3 +123,8 @@ body {
     flex-direction: row;
     gap: 20px;
 }
+
+.ImageC {
+    max-height: 200px;
+    max-width: 100%;
+}
