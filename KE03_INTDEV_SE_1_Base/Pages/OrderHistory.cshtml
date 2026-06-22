@@ -4,18 +4,18 @@
     ViewData["Title"] = "Bestel geschiedenis";
 }
 
-Bestel geschiedenis:
-<ul>
+<h1>Bestel geschiedenis:</h1>
+
     @foreach (var order in Model.Customer.Orders)
     {
-        <li>
-            Order 
-            <ul>
+        <div class="OrderHistory">
+            <h3>Order #@order.Id</h3>
+            <div>
                 @foreach (var product in order.Products)
                 {
-                    <li>@product.Name</li>
+                    <div>@product.Name</div>
                 }
-            </ul>
-        </li>
+            </div>
+        <div>@order.OrderDate</div>
+        </div>
     }
-</ul>
