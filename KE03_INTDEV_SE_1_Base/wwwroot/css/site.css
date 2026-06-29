@@ -145,3 +145,9 @@ body {
     align-items: flex-start;
     gap: 20px;
 }
+
+.ProductAfbeelding {
+    width: 1000px;
+    height: 600px;
+}
+
