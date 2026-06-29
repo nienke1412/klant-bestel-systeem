@@ -4,8 +4,12 @@
 	ViewData["Title"] = "Winkelwagen";
 }
 
-<h2>order</h2>
+
+<div class="WinkelWagen">
+	
+<div class="ProductenWinkelwagen">
 <ul>
+			<h2>order</h2>
 	@foreach (var product in Model.Order.Products)
 	{
 		<li>@Html.DisplayName(product.Name) - @Html.DisplayName($"€{product.Price.ToString()}")</li>
@@ -15,3 +19,8 @@
 <button onclick="location.href='Bestellen';" class="btn btn-outline-success">
 	Bestellen
 </button>
+</div>
+
+<img class="AfbeeldingWinkelwagen" src="~/images/Schermafbeelding 2026-06-29 195752.png" alt="TotaalBedrag" />
+
+</div>

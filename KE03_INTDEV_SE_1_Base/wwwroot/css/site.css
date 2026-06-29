@@ -151,3 +151,17 @@ body {
     height: 600px;
 }
 
+.WinkelWagen {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.AfbeeldingWinkelwagen{
+    width: 400px;
+    height: 600px;
+}
+.ProductenWinkelwagen {
+    width: 600px;
+}
