@@ -15,12 +15,26 @@ namespace KE03_INTDEV_SE_1_Base.Pages
             _orderRepository = orderRepository;
         }
 
+        public decimal totaalbedrag { get; set; }
+        public decimal totaalVerzendBedrag { get; set; }
+
         public void OnGet()
         {
             int orderId = 1;
             Order = _orderRepository.GetOrderById(orderId);
+            decimal totaalbedrag = 0;
+            decimal totaalVerzendBedrag = 0;
+            foreach (var item in Order.Products)
+            {
+                 var price = item.Price;
+                totaalbedrag += price;
+            }
+            this.totaalbedrag = totaalbedrag;
+            totaalVerzendBedrag = totaalbedrag + 3.95m;
+            this.totaalVerzendBedrag = totaalVerzendBedrag;
         }
 
         
+
     }
 }

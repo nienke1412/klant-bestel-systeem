@@ -36,29 +36,30 @@
 	<div class="TotaalOverzicht">
 		<div class="TotaalBlokje">
 				<h4>Totaal artikelen</h4>
-				<h4>€ Totaal</h4>
+				<h4> €@Model.totaalbedrag</h4>
 		</div>
 		<div class="TotaalBlokje">
 				<h4>Verzendkosten</h4>
-				<h4>€ Totaal</h4>
+				<h4>€3,95</h4>
 		</div>
 		
 		<h4>Kortingscode</h4>
 			<div class="dropdown show">
-				<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Dropdown link
 				</a>
 
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					<a class="dropdown-item" href="#">Action</a>
-					<a class="dropdown-item" href="#">Another action</a>
-					<a class="dropdown-item" href="#">Something else here</a>
+					<a class="dropdown-item" href="#">Vul hier uw Kortingscode in:
+						<input type="text" name="Kortingscode" value="" />
+						<button class="btn btn-primary">Invoeren</button>
+					</a>
 				</div>
 			</div>
 			</div>
 		<div class="TotaalBlokje">
-				<h4>Totaal bedrag</h4>
-				<h4>€ Totaal</h4>
+			<h4>Totaal bedrag</h4>
+			<h4>€@Model.totaalVerzendBedrag</h4>
 		</div>
             <button onclick="location.href='Bestellen';" class="btn btn-outline-success">
                 Bestellen
