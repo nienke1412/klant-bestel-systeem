@@ -6,7 +6,7 @@
 
 <h2> Voer hier uw gegevens in:</h2>
 <div class="VolledigOverzicht">
-<div class="WinkelWagen">
+<div class="WinkelWagen1">
 		
 	<form class="Bestelformulier" action="/action_page.php">
 			
@@ -48,16 +48,16 @@
 	<div class="TotaalOverzicht">
 		<div class="TotaalBlokje">
 			<h4>Totaal artikelen</h4>
-			<h4>€ Totaal</h4>
+			<h4>€@Model.totaalbedrag</h4>
 		</div>
 		<div class="TotaalBlokje">
 			<h4>Verzendkosten</h4>
-			<h4>€ Totaal</h4>
+			<h4>€3,95</h4>
 		</div>
 		</div>
 		<div class="TotaalBlokje">
 		<h4>Totaal bedrag</h4>
-		<h4>€ Totaal</h4>
+		<h4>€@Model.totaalVerzendBedrag</h4>
 		
 	</div>
 		<div class="betaalOpties">
