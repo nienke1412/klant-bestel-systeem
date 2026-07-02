@@ -23,7 +23,7 @@
         <img class="ImageC" src="~/images/Vliegtuig.jpg" alt="Voertuigen" />
         <h5>Voertuigen</h5>
         <a asp-page="/ProductVanCategorie"
-           asp-route-categoryId="0"
+           asp-route-categoryId="1"
            class="btn btn-primary">
             Bekijk producten
         </a>
@@ -32,13 +32,21 @@
     <div class="card">
         <img class="ImageC"  src="~/images/werkMee.jpg" alt="Meubels" />
         <h5>Meubels</h5>
-        <a href="/Products?categoryId="1" class="btn btn-primary">Bekijk producten</a>        
+        <a asp-page="/ProductVanCategorie"
+           asp-route-categoryId="2"
+           class="btn btn-primary">
+            Bekijk producten
+        </a>
     </div>
 
     <div class="card">
         <img class="ImageC"  src="~/images/Naamloos.jpg" alt="Wapentuig" />
         <h5>Wapentuig</h5>
-        <a href="/Products?categoryId="2" class="btn btn-primary">Bekijk producten</a>
+        <a asp-page="/ProductVanCategorie"
+           asp-route-categoryId="3"
+           class="btn btn-primary">
+            Bekijk producten
+        </a>
     </div>
 </div>
 

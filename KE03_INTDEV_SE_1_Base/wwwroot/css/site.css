@@ -18,7 +18,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #f5fbfc;
 }
 
 .ImageOnderdelen {
@@ -164,8 +165,68 @@ body {
 }
 .ProductenWinkelwagen {
     width: 600px;
+    margin-right: 50px;
 }
 
 .Wit{
     width: 350px;
+}
+
+.TotaalBlokje {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 50px;
+}
+
+.TotaalOverzicht {
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    clear: left;
+}
+
+.WinkelwagenProduct {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+.favoriet {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.close {
+    cursor: pointer;
+    top: 50%;
+    right: 0%;
+    padding: 12px 16px;
+    margin-left: 10px;
+}
+
+.close:hover {
+    background: #bbb;
+}
+
+.Blokje {
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.aantal{
+    margin-left: 70px;
 }

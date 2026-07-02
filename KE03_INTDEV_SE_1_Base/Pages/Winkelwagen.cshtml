@@ -8,19 +8,49 @@
 <div class="WinkelWagen">
 	
 <div class="ProductenWinkelwagen">
-<ul>
-			<h2>order</h2>
+<div>
+	<h1>Order</h1>
+	<div>
 	@foreach (var product in Model.Order.Products)
 	{
-		<li>@Html.DisplayName(product.Name) - @Html.DisplayName($"€{product.Price.ToString()}")</li>
+		<div class="Blokje"> 
+		<div class="WinkelwagenProduct">
+		<div class="square"></div>
+		<div>@Html.DisplayName(product.Name)</div>
+		<img class="favoriet" src="/images/hartje.png" alt="Favoriet"/>
+		<div class="close">x</div>
+		</div>
+		<div class="WinkelwagenProduct">
+			<p class="aantal">- 1 +</p>
+			<div>@Html.DisplayName($"€{product.Price.ToString()}") </div>
+		</div>
+		</div>
+		
 	}
-</ul>
-
-<button onclick="location.href='Bestellen';" class="btn btn-outline-success">
-	Bestellen
-</button>
+	</div>
 </div>
 
-<img class="AfbeeldingWinkelwagen" src="~/images/Schermafbeelding 2026-06-29 195752.png" alt="TotaalBedrag" />
-
+</div>
+<div class="TotaalBedragWinkelwagen">
+	<h1>Overzicht</h1>
+	<div class="TotaalOverzicht">
+		<div class="TotaalBlokje">
+				<h4>Totaal artikelen</h4>
+				<h4>€ Totaal</h4>
+		</div>
+		<div class="TotaalBlokje">
+				<h4>Verzendkosten</h4>
+				<h4>€ Totaal</h4>
+		</div>
+		
+		<h4>Kortingscode</h4>
+		<div class="TotaalBlokje">
+				<h4>Totaal bedrag</h4>
+				<h4>€ Totaal</h4>
+		</div>
+            <button onclick="location.href='Bestellen';" class="btn btn-outline-success">
+                Bestellen
+			</button>
+	</div>
+</div>
 </div>
