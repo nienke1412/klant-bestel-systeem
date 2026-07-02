@@ -47,6 +47,9 @@ namespace KE03_INTDEV_SE_1_Base.Pages
         {
             int orderId = 1; // moet nog dynamisch worden maar weet nogsteeds niet hoe
             _orderRepository.AddProductToOrder(orderId, productId);
+
+            TempData["Message"] = "Product toegevoegd aan winkelwagen!";
+
             return RedirectToPage();
         }
 

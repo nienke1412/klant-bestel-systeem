@@ -4,9 +4,9 @@
     ViewData["Title"] = "Producten";
 }
 <div class="ProductenPaginaCompleet">
-
+     
 <div class="filterAfbeelding">
-    <h4 class="FilterPoging">Categorie:</h4>
+    <h4 class="FilterPoging">Categorie:    </h4>
     <form methode="get"> 
     <div class="form-group">
             <div class="form-check">
@@ -33,11 +33,72 @@
             </div>
         </div>
     </form>
+        <h4 class="FilterPoging">Prijs:      </h4>
+        <form methode="get">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" name="prijs" onchange="this.form.submit()">
+                        <label class="form-check-label" for="gridCheck">
+                            Onder de €10
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" name="prijs" onchange="this.form.submit()">
+                        <label class="form-check-label" for="gridCheck">
+                            €50 - €100
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" name="prijs" onchange="this.form.submit()">
+                        <label class="form-check-label" for="gridCheck">
+                            boven de €100
+                        </label>
+                    </div>
+                </div>
+        </form>
+        <h4 class="FilterPoging">Merk:      </h4>
+        <form methode="get">
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" name="Merk" onchange="this.form.submit()">
+                    <label class="form-check-label" for="gridCheck">
+                        Matrix Inc.
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" name="Merk" onchange="this.form.submit()">
+                    <label class="form-check-label" for="gridCheck">
+                        Bosch
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" name="Merk" onchange="this.form.submit()">
+                    <label class="form-check-label" for="gridCheck">
+                        Stanly
+                    </label>
+                </div>
+            </div>
+        </form>
     </div>
-<img class="filterAfbeelding" src="~/images/20260629_183207.jpg" alt="filter" />
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="popup">
+            @TempData["Message"]
+        </div>
+    }
 
 <div class="producten">
 @foreach (var i in Model.FilteredProducts)
+
 {
     <div class="ProductCard">
     <h1>@Html.DisplayName(i.Name)</h1>

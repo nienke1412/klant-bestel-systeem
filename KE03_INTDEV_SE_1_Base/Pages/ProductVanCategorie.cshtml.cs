@@ -13,6 +13,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
         private readonly IOrderRepository _orderRepository;
 
         public IList<Product> Products { get; set; }
+        public List<string> Categorie { get; set; }
 
         public ProductVanCategorieModel(ILogger<ProductVanCategorieModel> logger, IProductRepository productRepository, IOrderRepository orderRepository)
         {
