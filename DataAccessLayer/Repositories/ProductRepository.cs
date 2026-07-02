@@ -44,9 +44,9 @@ namespace DataAccessLayer.Repositories
             return _context.Products.Include(p => p.Parts).Where(p => p.Name.Contains(name));
         }
 
-        public IEnumerable<Product> GetAllProductsByCategory(string category)
+        public IEnumerable<Product> GetAllProductsByCategory(int categoryId)
         {
-            return _context.Products.Include(p => p.Parts).Where(p => p.Category.Name == category);
+            return _context.Products.Include(p => p.Parts).Where(p => p.CategoryId == categoryId);
         }
 
         public void UpdateProduct(Product product)

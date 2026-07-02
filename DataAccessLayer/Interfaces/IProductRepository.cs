@@ -19,7 +19,7 @@ namespace DataAccessLayer.Interfaces
 
         public void DeleteProduct(Product product);
 
-        public IEnumerable<Product> GetAllProductsByCategory(string category);
+        public IEnumerable<Product> GetAllProductsByCategory(int categoryId);
 
         public IEnumerable<Product> GetProductsByName(string name);
 

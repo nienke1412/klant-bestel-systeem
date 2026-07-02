@@ -4,3 +4,23 @@
     ViewData["Title"] = "Producten";
 }
 
+<div class="ProductenPaginaCompleet">
+
+    <img class="filterAfbeelding" src="~/images/20260629_183207.jpg" alt="filter" />
+
+    <div class="producten">
+        @foreach (var i in Model.Products)
+        {
+            <div class="ProductCard">
+                <h1>@Html.DisplayName(i.Name)</h1>
+                <p class="price">@Html.DisplayName($"€{i.Price.ToString()}")</p>
+                <p>@Html.DisplayName(i.Description)</p>
+                <form method="post" asp-page-handler="AddToCart">
+                    <input type="hidden" name="productId" value="@i.Id" />
+                    <button type="submit">Add to cart</button>
+                </form>
+            </div>
+        }
+    </div>
+</div>
+

@@ -22,7 +22,11 @@
         <div class="card"> 
         <img class="ImageC" src="~/images/Vliegtuig.jpg" alt="Voertuigen" />
         <h5>Voertuigen</h5>
-        <a href="/Products?categoryId="0" class="btn btn-primary">Bekijk producten</a>
+        <a asp-page="/ProductVanCategorie"
+           asp-route-categoryId="0"
+           class="btn btn-primary">
+            Bekijk producten
+        </a>
     </div>
 
     <div class="card">
