@@ -31,7 +31,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public IActionResult OnPostAddToCart(int productId)
         {
-            int orderId = 1; // moet nog dynamisch worden
+            int orderId = 1; // moet nog dynamisch worden maar weet nogsteeds niet hoe
             _orderRepository.AddProductToOrder(orderId, productId);
             return RedirectToPage();
         }

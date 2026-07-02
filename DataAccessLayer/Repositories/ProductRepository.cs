@@ -39,6 +39,16 @@ namespace DataAccessLayer.Repositories
             return _context.Products.Include(p => p.Parts).FirstOrDefault(p => p.Id == id);
         }
 
+        public IEnumerable<Product> GetProductsByName(string name)
+        {
+            return _context.Products.Include(p => p.Parts).Where(p => p.Name.Contains(name));
+        }
+
+        public IEnumerable<Product> GetAllProductsByCategory(string category)
+        {
+            return _context.Products.Include(p => p.Parts).Where(p => p.Category.Name == category);
+        }
+
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
