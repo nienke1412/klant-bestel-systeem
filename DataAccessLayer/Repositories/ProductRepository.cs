@@ -31,7 +31,8 @@ namespace DataAccessLayer.Repositories
 
         public IEnumerable<Product> GetAllProducts()
         {
-            return _context.Products.Include(p => p.Parts);
+            return _context.Products.Include(p => p.Parts)
+                .Include(p => p.Category);
         }
 
         public Product? GetProductById(int id)

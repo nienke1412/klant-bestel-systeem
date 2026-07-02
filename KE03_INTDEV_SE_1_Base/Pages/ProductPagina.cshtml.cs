@@ -8,11 +8,15 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 {
     public class ProductPaginaModel : PageModel
     {
+        [BindProperty(SupportsGet = true)]
+        public List<string> Categorie { get; set; }
+
         private readonly IProductRepository _productRepository;
         private readonly ILogger<ProductPaginaModel> _logger;
         private readonly IOrderRepository _orderRepository;
 
         public IList<Product> Products { get; set; }
+        public IList<Product> FilteredProducts { get; set; }
 
         public ProductPaginaModel(ILogger<ProductPaginaModel> logger, IProductRepository productRepository, IOrderRepository orderRepository)
         {
@@ -25,8 +29,18 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public void OnGet()
         {
+            var ids = Categorie?.Select(int.Parse).ToList();
             Products = _productRepository.GetAllProducts().ToList();
-            _logger.LogInformation($"getting all {Products.Count} products");
+            if (ids != null && ids.Any())
+            {
+                FilteredProducts = Products
+                    .Where(p => ids.Contains(p.CategoryId))
+                    .ToList();
+            }
+            else
+            {
+                FilteredProducts = Products;
+            }
         }
 
         public IActionResult OnPostAddToCart(int productId)

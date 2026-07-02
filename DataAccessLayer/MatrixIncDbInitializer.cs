@@ -42,7 +42,7 @@ namespace DataAccessLayer
             {
                 new Category { Name = "Voertuigen" },
                 new Category { Name = "Meubels" },
-                new Category { Name = "wapentuigen" }
+                new Category { Name = "Wapentuigen" }
             };
             context.Categories.AddRange(categories);
 
